@@ -1,0 +1,126 @@
+*{
+    font-family: "gilroy";
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 1vw;
+    border-bottom: 1px solid black;
+    height: 10vh;
+}
+
+.logo-container{
+    height: 100%;
+    width: 10%;
+}
+
+.logo{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.nav-items{
+    width: 50%;
+}
+
+.nav-items > ul{
+    display: flex;
+    gap: 8vw;
+}
+
+.nav-items > ul > li {
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 1.1vw;
+}
+
+.body{
+    padding: 5vh 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh;
+}
+
+.search{
+    display: flex;
+    gap:1vw;
+}
+
+.search input{
+    padding: 8px 10px;
+    font-size: 1vw;
+}
+
+.search button{
+    padding: 4px 10px;
+    font-size: 1vw;
+    font-weight: 500;
+    background-color: #FF6E01;
+    border: none;
+    color: white
+}
+
+.card-container{
+    padding-top: 5vh;
+    display: flex;
+    gap: 3vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    height: 300px;
+    width: 250px;
+    /* background-color: brown; */
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.card:hover{
+    scale: 0.95;
+}
+
+.card-img-container{
+    height: 55%;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.card-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.res-title{
+    margin-top: 2vh;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.res-rating > span {
+    color: white;
+    background-color: green;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 1vw;
+}
+
+.res-cuisine, .res-area{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    margin-top: 4px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+}
