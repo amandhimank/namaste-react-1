@@ -25,18 +25,35 @@
 }
 
 .nav-items{
-    width: 50%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    /* background-color: red; */
 }
 
 .nav-items > ul{
+    width: 100%;
     display: flex;
-    gap: 8vw;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav-items > ul > li {
     list-style-type: none;
     font-weight: bold;
     font-size: 1.1vw;
+}
+
+.login-btn{
+    width: 70px;
+    padding: 8px 10px;
+    font-size: 1vw;
+    font-weight: 500;
+    background-color: #FF6E01;
+    border: none;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
 .body{
@@ -49,7 +66,6 @@
 
 .search{
     display: flex;
-    gap:1vw;
 }
 
 .search input{
@@ -57,20 +73,34 @@
     font-size: 1vw;
 }
 
-.search button{
+.searchBtn{
     padding: 4px 10px;
     font-size: 1vw;
     font-weight: 500;
     background-color: #FF6E01;
     border: none;
-    color: white
+    color: white;
+    margin-right: 2vw;
+}
+
+
+.top-rated{
+    padding: 4px 10px;
+    font-size: 1vw;
+    font-weight: 500;
+    border: 1px solid black;
+    color: black;
+    background-color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 .card-container{
     padding-top: 5vh;
     display: flex;
-    gap: 3vw;
     flex-wrap: wrap;
+    row-gap: 20px;
+    column-gap: 3vw;
     justify-content: center;
 }
 
@@ -78,7 +108,7 @@
     height: 300px;
     width: 250px;
     /* background-color: brown; */
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
     transition: all 0.1s ease;
     cursor: pointer;
@@ -89,10 +119,28 @@
 }
 
 .card-img-container{
-    height: 55%;
+    position: relative;
+    height: 58%;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 15px;
     overflow: hidden;
+}
+
+.offer-overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, transparent, rgb(0, 0, 0));
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    padding-left: 10px;
+}
+
+.offer-overlay > h3 {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 10px;
 }
 
 .card-img{
@@ -108,7 +156,7 @@
     overflow: hidden;
 }
 
-.res-rating > span {
+.stars {
     color: white;
     background-color: green;
     border-radius: 50%;
@@ -123,4 +171,147 @@
     margin-top: 4px;
     font-weight: 400;
     text-overflow: ellipsis;
+}
+
+.shimmer-body{
+    padding: 5vh 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh;
+}
+
+.shimmer-container{
+    padding-top: 5vh;
+    display: flex;
+    gap: 3vw;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.shimmer-card{
+    height: 300px;
+    width: 250px;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.about-container{
+    width: 50%;
+    padding: 10vw;
+}
+
+.about-title{
+    font-size: 4vw;
+    font-weight: 600;
+    color: #FF6E01;
+}
+
+.about-desc{
+    font-size: 1.2vw;
+    color: grey;
+}
+
+.error-container{
+    padding: 10vw;
+}
+
+.error-text{
+    font-size: 4vw;
+    color: red;
+    font-weight: 500;
+}
+
+.menu{
+    position: relative;
+    width: 50%;
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.title{
+    font-size: 2vw;
+}
+
+.res-details{
+    margin-top: 20px;
+    border: 1px solid black;
+    width: 100%;
+    padding: 1vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:1vw;
+}
+
+.cuisines{
+    color: #FF6E03;
+    text-decoration: underline;
+}
+
+.locality{
+    color: #8D8F9B;
+    font-weight: 500;
+}
+
+.menu-items{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+
+.item{
+    width: 100%;
+    height: 23vh;
+    display: flex;
+    padding: 3vh 0;
+    gap: 2vw;
+    border-bottom: 1px solid black;
+}
+
+.item-text{
+    width: 75%;
+}
+
+.item-desc{
+    margin-top: 2vh;
+}
+
+.item-img{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.item-img > img{
+    height: 85%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.addbtn{
+    position: absolute;
+    color: green;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-size: 1vw;
+    font-weight: 900;
+    background-color: #fff;
+    border: 1px solid #03030392;
 }
