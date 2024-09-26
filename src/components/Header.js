@@ -9,20 +9,20 @@ const linkStyle = {
 
 const Header = () => {
     const [ btn, setBtn ] = useState("Login");
-    console.log("Header Rendered");   
+    // console.log("Header Rendered");   
 
     // if no dependency array, useEffect() will be called after every render of the component
     // if there is an empty dependency array, useEffect() will be called only for the initial render(or, first render of the component)
     // if the dependecy array is [btn] => useEffect() will be callled only when the dependency changes ,that is, whenever "btn" is updated useEffect() will be called 
     useEffect(() => {
-        console.log("useEffect Called");
+        // console.log("useEffect Called");
     }, [])
     
     return (
         <div className='header'>
-            <div className='logo-container'>
+            <Link to="/" className='logo-container'>
                 <img className='logo' src={LOGO_URL} />
-            </div>
+            </Link>
             <div className='nav-items'>
                 <ul>
                     <li><Link to="/" style={linkStyle}>Home</Link></li>

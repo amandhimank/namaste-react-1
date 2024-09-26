@@ -201,17 +201,35 @@
 
 .about-container{
     width: 50%;
-    padding: 10vw;
+    padding: 3vw 5vw;
 }
 
 .about-title{
     font-size: 4vw;
     font-weight: 600;
     color: #FF6E01;
+    margin-bottom: 2vw;
 }
 
 .about-desc{
     font-size: 1.2vw;
+    color: grey;
+}
+
+.user-div{
+    width: fit-content;
+    padding: 10px;
+    border: 1px solid #FF5200;
+    margin-bottom: 1vw;
+}
+
+.user-name{
+    color: green;
+    font-size: 2.5vw;
+}
+
+.user-location{
+    font-weight: 500;
     color: grey;
 }
 
@@ -241,20 +259,29 @@
     font-size: 2vw;
 }
 
+.details-container{
+    background: linear-gradient(to top, #DDDDE5,#fff);
+    width: 100%;
+    padding: 0 15px 15px 15px;
+    border-radius: 30px;
+    margin-left: -15px;
+}
+
 .res-details{
     margin-top: 20px;
-    border: 1px solid black;
-    width: 100%;
+    border: 1px solid rgba(63, 63, 63, 0.422);
     padding: 1vw;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap:1vw;
+    gap:0.5vw;
+    background-color: #fff;
 }
 
 .cuisines{
-    color: #FF6E03;
+    color: #FF5200;
     text-decoration: underline;
+    margin-bottom: 1.2vh;
 }
 
 .locality{
@@ -270,11 +297,11 @@
 
 .item{
     width: 100%;
-    height: 23vh;
+    height: 26vh;
     display: flex;
-    padding: 3vh 0;
+    padding: 4vh 0;
     gap: 2vw;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgba(75, 75, 75, 0.459);
 }
 
 .item-text{
@@ -284,6 +311,7 @@
 .item-desc{
     margin-top: 2vh;
 }
+
 
 .item-img{
     position: relative;

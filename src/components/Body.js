@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import Card from './Card';
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+
+const linkStyle = {
+    textDecoration: 'none',
+    color: 'black'
+}
 
 const Body = () => {
     // useState => Powerful local state variables
@@ -45,7 +51,7 @@ const Body = () => {
             </div>
             <div className='card-container'>
                 {filteredResList.map((resData) => (
-                    <Card key={resData.info.id} resData={resData} />
+                    <Link key={resData.info.id} to={"/restaurants/"+ resData.info.id} style={linkStyle} ><Card resData={resData} /></Link>
                 ))}
             </div>
         </div>

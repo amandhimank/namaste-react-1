@@ -1,7 +1,7 @@
 import { CDN_URL } from '../utils/constants';
 
 const Card = ({ resData }) => {
-    const { name,avgRatingString,cuisines,areaName,aggregatedDiscountInfoV3 } = resData?.info;
+    const { name,avgRatingString,cuisines,areaName,aggregatedDiscountInfoV3,id } = resData?.info;
     return (
         <div className='card'>
             <div className='card-img-container'>

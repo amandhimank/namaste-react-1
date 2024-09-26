@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 const Contact = () => {
     return (
         <div className="about-container">
