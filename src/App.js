@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header';
 import Body from './components/Body';
@@ -7,12 +7,19 @@ import Error from './components/Error';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Contact from './components/Contact';
 import RestaurantMenu from './components/RestaurantMenu';
+import Footer from './components/Footer';
+
+// import Grocery from './components/Grocery'; // for lazy we won't import it like this
+
+// for lazy loading we will import the component like this:
+const Grocery = lazy(() => import("./components/Grocery"));
 
 const App = () => {
     return (
-        <div className='app'>
+        <div className='app relative min-h-screen'>
             <Header />
             <Outlet />
+            <Footer />
         </div>
     )
 };
@@ -40,7 +47,11 @@ const appRouter = createBrowserRouter([
             {
                 path: "/restaurants/:resId",
                 element: <RestaurantMenu />
-            }
+            },
+            {
+                path: "/grocery",
+                element: <Suspense fallback={<h1>Loading....</h1>}><Grocery /></Suspense>
+            },
         ],
         errorElement: <Error />
     },

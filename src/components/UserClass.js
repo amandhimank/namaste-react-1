@@ -25,16 +25,16 @@ class UserClass extends React.Component{
 
         console.log(this.props.name + " Child Render");
         return (
-            <div className="user-div">
-                <h1 className="user-name">{name}</h1>
-                <h4 className="user-location">{location}</h4>
-                <h3>Likes: {count}</h3>
-                <button onClick={() => {
+            <div className="user-div mt-8">
+                <h1 className="user-name text-3xl font-bold">{name}</h1>
+                <h4 className="user-location text-xl font-medium">{location}</h4>
+                <h3 className='text-xl mt-3 mb-2'>Likes: {count}</h3>
+                <button className='p-2 bg-orange-500 text-white font-semibold mr-4' onClick={() => {
                     this.setState({
                         count: count + 1
                     })
                 }} >Like</button>
-                <button onClick={() => {
+                <button className='p-2 bg-orange-500 text-white font-semibold ' onClick={() => {
                     this.setState({
                         count: count > 0 ? count - 1 : count
                     })
