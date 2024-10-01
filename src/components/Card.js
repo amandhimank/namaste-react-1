@@ -1,6 +1,7 @@
 import { CDN_URL } from "../utils/constants";
 import { MdStars } from "react-icons/md";
 
+
 const Card = ({ resData }) => {
   const {
     name,
@@ -10,6 +11,7 @@ const Card = ({ resData }) => {
     aggregatedDiscountInfoV3,
     id,
   } = resData?.info;
+
   return (
     <div className="card w-64 rounded-2xl overflow-hidden hover:scale-[0.97] transition">
       <div className="card-img-container relative h-40 w-full rounded-2xl overflow-hidden">
@@ -36,5 +38,17 @@ const Card = ({ resData }) => {
     </div>
   );
 };
+
+// Defining the Highr Order Components
+export const withPromotedLabel = (Card) => {
+  return ({ resData }) => {
+    return (
+      <div className="relative">
+        <label className="absolute z-[998] rounded-xl text-lg bg-gray-900 text-white px-3 py-1">Promoted</label>
+        <Card resData={{...resData}} />
+      </div>
+    )
+  }
+}
 
 export default Card;

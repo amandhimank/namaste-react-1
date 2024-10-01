@@ -7,7 +7,6 @@ import Error from './components/Error';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Contact from './components/Contact';
 import RestaurantMenu from './components/RestaurantMenu';
-import Footer from './components/Footer';
 
 // import Grocery from './components/Grocery'; // for lazy we won't import it like this
 
@@ -19,7 +18,6 @@ const App = () => {
         <div className='app relative min-h-screen'>
             <Header />
             <Outlet />
-            <Footer />
         </div>
     )
 };

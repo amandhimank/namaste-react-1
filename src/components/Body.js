@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Card from './Card';
+import Card, { withPromotedLabel } from './Card';
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -15,7 +15,9 @@ const Body = () => {
     const restaurantList = useBodyData();
     
     const [ filteredResList, setFilteredResList ] = useState(restaurantList);
-    
+
+    const PromotedRest = withPromotedLabel(Card);
+
     useEffect(() => {
         setFilteredResList(restaurantList);
     }, [restaurantList]);
@@ -45,13 +47,15 @@ const Body = () => {
                     setFilteredResList(temp);
                 }} className='searchBtn px-4 py-2 bg-orange-500 mr-8 rounded-r-full text-white'>Search</button>
                 <button onClick={() => {
-                    const filteredList = restaurantList.filter(res => res.info.avgRatingString > 4.5);
+                    const filteredList = restaurantList.filter(res => res.info.avgRatingString > 4.3);
                     setFilteredResList(filteredList);
                 }} className='top-rated px-4 py-2 bg-zinc-500 text-white rounded-full'>Rating 4+</button>
             </div>
             <div className='card-container max-w-screen-2xl container mx-auto flex justify-center flex-wrap px-28 gap-8'>
                 {filteredResList.map((resData) => (
-                    <Link key={resData.info.id} to={"/restaurants/"+ resData.info.id} style={linkStyle} ><Card resData={resData} /></Link>
+                    <Link key={resData.info.id} to={"/restaurants/"+ resData.info.id} style={linkStyle} >
+                        {resData.info.avgRatingString > 4.5 ? <PromotedRest resData={resData} /> : <Card resData={resData} />}
+                    </Link>
                 ))}
             </div>
         </div>
